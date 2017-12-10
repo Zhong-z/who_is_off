@@ -1,0 +1,7 @@
+require './lib/whos_off.rb'
+desc 'Post who is off to slack'
+task :whos_off do
+  puts 'Starting update'
+  WhosOff.update
+  puts 'Finishing update'
+end
