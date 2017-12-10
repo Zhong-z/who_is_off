@@ -16,9 +16,7 @@ class WhosOff
   end
 
   def self.whosoff(day: Date.today)
-    start = Date.today + 200
-    day = Date.today + 200
-    response = HTTParty.get("#{BAMBOO_API_URL}?start=#{start}&end=#{day}")
+    response = HTTParty.get("#{BAMBOO_API_URL}?end=#{day}")
     xml_doc = Nokogiri::XML(response.body)
     xml_doc.xpath('//item/employee').map(&:inner_text)
   end
