@@ -1,5 +1,19 @@
-* Who is off
+# Who is off
 
-Schedule a daily task to run the whos_off rake task which will ask BambooHR for a list of employees on holiday and then post the results to Slack.
+A simple BambooHR & Slack integration to post a daily summary of who is on leave
 
-Two environment variables are required SLACK_WEBHOOK_URL & BAMBOOHR_API_KEY
+## Prerequisites
+
+Two environment variables are required
+
+```SLACK_WEBHOOK_URL```
+&
+```BAMBOOHR_API_KEY```
+
+Run the following command
+
+```rake whos_off```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
