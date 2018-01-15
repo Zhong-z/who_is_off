@@ -6,6 +6,7 @@ class WhosOff
   BAMBOO_API_URL = "https://#{ENV['BAMBOOHR_API_KEY']}:x@api.bamboohr.com/api/gateway.php/shippit/v1/time_off/whos_out/".freeze
 
   def self.update
+    return true if Date.today.saturday? || Date.today.sunday?
     names = whosoff
     text = if names.any?
              "*Who's off today:* #{names.join(', ')}"
